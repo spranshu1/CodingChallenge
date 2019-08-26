@@ -1,4 +1,4 @@
-package com.programs.challenges.hackerrank;
+package com.programs.challenges.hackerrank.jumpingclouds;
 
 /**
  * Emma is playing a new mobile game that starts with consecutively numbered clouds.

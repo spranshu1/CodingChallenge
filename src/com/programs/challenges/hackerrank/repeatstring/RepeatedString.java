@@ -1,7 +1,4 @@
-package com.programs.challenges.hackerrank;
-
-
-import java.util.stream.LongStream;
+package com.programs.challenges.hackerrank.repeatstring;
 
 /**
  * Lilah has a string, s, of lowercase English letters that she repeated infinitely many times.

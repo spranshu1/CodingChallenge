@@ -1,4 +1,4 @@
-package com.programs.challenges.hackerrank;
+package com.programs.challenges.hackerrank.sockmerchant;
 
 import java.util.HashMap;
 import java.util.Map;

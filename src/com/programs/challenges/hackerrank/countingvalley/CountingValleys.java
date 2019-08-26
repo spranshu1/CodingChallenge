@@ -1,4 +1,4 @@
-package com.programs.challenges.hackerrank;
+package com.programs.challenges.hackerrank.countingvalley;
 
 /**
  * Gary is an avid hiker. He tracks his hikes meticulously, paying close attention to small details like topography. During his last hike he took exactly  steps.

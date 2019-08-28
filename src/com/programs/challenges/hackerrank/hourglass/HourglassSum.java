@@ -9,10 +9,9 @@ public class HourglassSum {
 		if (row < 3 || col < 3) 
 	        return -1;
 		
-		int maxSum = 0;
+		int maxSum = Integer.MIN_VALUE;
 				
-		//System.out.println("Rows : "+row+" Column : "+col);
-
+		
 		for (int i = 0; i < row - 2; i++) {
 			for (int j = 0; j < col - 2; j++) {
 				

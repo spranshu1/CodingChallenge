@@ -13,6 +13,8 @@ public class ArrayManipulation {
             finalArr[b+1] -= k;
         }
 
+        print(finalArr);
+        System.out.println();
         return getMaximum(finalArr);
     }
 
@@ -24,6 +26,13 @@ public class ArrayManipulation {
             max = Math.max(max, sum);
         }
         return max;
+    }
+    
+    static void print(long [] arr) {
+    	System.out.println("Final Array - ");
+    	for(int i=0;i < arr.length; i++) {
+    		System.out.print(arr[i]+"|");
+    	}
     }
 
     public static void main(String[] args) {
@@ -41,7 +50,8 @@ public class ArrayManipulation {
 
         print(queries);
 
-        System.out.println(arrayManipulation(5,queries));
+       
+        System.out.println("Result :"+arrayManipulation(5,queries));
 
     }
 

@@ -7,18 +7,17 @@ public class Solution {
 	static int activityNotifications(int[] expenditure, int d) {
 		
 		Arrays.sort(expenditure);
-
+		int notice = 0;
 		int i = 0;
 		int median = 0;
-		for(int j = d-1; j < expenditure.length - 1; j++) {
+		for(int j = d; j < expenditure.length; j++) {
 			median = getMedian(expenditure,i,j);
-			
-			
+			if(expenditure[j] >= (2 * median)) {
+				notice++;
+			}
+			i++;
 		}
-		
-		
-
-		return 0;
+		return notice;
 	}
 
 	static int getMedian(int[] expenditure, int i, int j) {
@@ -26,15 +25,17 @@ public class Solution {
 		int median = 0;
 		int len = arr.length;
 		if (len % 2 != 0) {
-			median = expenditure[len / 2];
+			median = arr[len / 2];
 		} else {
-			median = (expenditure[(len - 1) / 2] + expenditure[len / 2]) / 2;
+			median = (arr[(len - 1) / 2] + arr[len / 2]) / 2;
 		}
 		return median;
 	}
 
 	public static void main(String[] args) {
 
+		int[] expenditure = {2,3,4,2,3,6,8,4,5};
+		System.out.println(activityNotifications(expenditure, 5));
 	}
 
 }

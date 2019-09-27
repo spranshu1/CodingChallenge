@@ -5,23 +5,40 @@ import java.util.Arrays;
 public class Solution {
 
 	static int activityNotifications(int[] expenditure, int d) {
-		
-		Arrays.sort(expenditure);
-		int notice = 0;
-		int i = 0;
-		int median = 0;
-		for(int j = d; j < expenditure.length; j++) {
-			median = getMedian(expenditure,i,j);
-			if(expenditure[j] >= (2 * median)) {
-				notice++;
-			}
-			i++;
+		int[] counts = new int[201];
+		for (int i = 0; i < d; i++) {
+			counts[expenditure[i]]++;
 		}
-		return notice;
+
+		int result = 0;
+		for (int i = d; i < expenditure.length; i++) {
+			int lower = 0;
+			int leftNum = 0;
+			while ((leftNum + counts[lower]) * 2 <= d) {
+				leftNum += counts[lower];
+				lower++;
+			}
+
+			int upper = counts.length - 1;
+			int rightNum = 0;
+			while ((rightNum + counts[upper]) * 2 <= d) {
+				rightNum += counts[upper];
+				upper--;
+			}
+
+			if (expenditure[i] >= lower + upper) {
+				result++;
+			}
+
+			counts[expenditure[i - d]]--;
+			counts[expenditure[i]]++;
+		}
+		return result;
+
 	}
 
-	static int getMedian(int[] expenditure, int i, int j) {
-		int [] arr = Arrays.copyOfRange(expenditure, i, j);
+	static int getMedian(int[] sortedExp, int i, int j) {
+		int [] arr = Arrays.copyOfRange(sortedExp, i, j);
 		int median = 0;
 		int len = arr.length;
 		if (len % 2 != 0) {
@@ -34,8 +51,8 @@ public class Solution {
 
 	public static void main(String[] args) {
 
-		int[] expenditure = {2,3,4,2,3,6,8,4,5};
-		System.out.println(activityNotifications(expenditure, 5));
+		int[] expenditure = {1,2,3,4,4};
+		System.out.println(activityNotifications(expenditure, 4));
 	}
 
 }

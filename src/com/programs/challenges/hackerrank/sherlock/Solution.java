@@ -17,39 +17,35 @@ public class Solution {
 
 	static String isValid(String s) {
 		int [] count = new int [26];
-		int remcounter = 0;
 		String result = "YES";
-		int lastLen = 0;
+		int max_occur = -1;
+		boolean removedChar = false;
+		
 		for(int i = 0 ; i < s.length(); i++) {
 			count[s.charAt(i) -'a']++;
 		}
-		
+				
 		for(int i = 0 ; i < 26;i++) {
-			if(count[i] % 2 != 0) {
-				count[i]--;
-				remcounter++;
-				if(count[i] != count[i+1]) {
-					result = "NO";
-					break;
-				}
-			} else {
-				lastLen = count[i];
-			}
-			if(remcounter > 1) {
-				result = "NO";
-				break;
-			}
-			if(lastLen != count[i]) {
-				result = "NO";
-				break;
-			}
+			if(count[i] == 0){
+	            continue;
+	        }else if(max_occur == -1){
+	            max_occur = count[i];
+	            continue;
+	        }else if(count[i] == max_occur){
+	            continue;
+	        }else if(!removedChar && (count[i] == max_occur + 1 || count[i] == 1)){
+	        	removedChar = !removedChar;
+	            continue;  
+	        }else{
+	            return "NO";
+	        }
 						
 		}
 		return result;
 	}
 
 	public static void main(String[] args) {
-		String s = "aaaabbcc";
+		String s = "aaabbcc";
 		System.out.println(isValid(s));
 	}
 

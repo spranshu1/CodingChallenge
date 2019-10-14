@@ -13,59 +13,55 @@
  */
 package com.programs.challenges.tree;
 
+
 public class Node {
 	
 	Node left, right;
-	
-	private Integer data,level;
+
+	int data;
 	
 	Node(int data){
 		this.data = data;
 	}
-	
-	public void set(int data) {
-		if(this.data == null) {
-			this.data = data;
-		}
-		
-		if(this.data >= data) {
+
+	public void insert(int value) {
+		if(value <= data) {
 			if(left == null) {
-				left = new Node(data);
+				left = new Node(value);
 			} else {
-				left.set(data);
+				left.insert(value);
 			}
 		} else {
 			if(right == null) {
-				right = new Node(data);
+				right = new Node(value);
 			} else {
-				right.set(data);
+				right.insert(value);
 			}
 			
 		}
 	}
 	
-	public boolean contains(int data) {
-		if(this.data == null) {
-			return false;
-		}
-		if(this.data == data ) {
+	public boolean contains(int value) {
+
+		if(this.data == value ) {
 			return true;
 		}
 		
-		if(this.data >= data) {
+		if(value <= this.data) {
 			if(left != null) {
-				return left.contains(data);
+				return left.contains(value);
 			}
 		} else {
 			if(right != null) {
-				return right.contains(data);
+				return right.contains(value);
 			}
 		}
 		return false;
 	}
 	
-	public void inOrderTraversal() {
-		
+
+	public void printTree(){
+
 	}
 
 }

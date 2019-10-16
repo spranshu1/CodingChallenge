@@ -28,24 +28,42 @@ public class LambdaDemo {
 	}
 
 	public static void main(String[] args) {
-		/*td = new TimeDemo();
-		//oldMethod();
-		//newMethod();
-		//streamMethods();
-		//streamDemo();
-		System.out.println("=======================\nJAVA 8 Time Package Demo\n=======================");
-		td.getLocalTime();
-		td.getLocalDate();
-		td.diffDate(LocalDateTime.now(), LocalDateTime.of(2016, 02, 01, 0, 0));
+		//td = new TimeDemo();
+		// oldMethod();
+		// newMethod();
+		// streamMethods();
+		// streamDemo();
+		//System.out.println("=======================\nJAVA 8 Time Package Demo\n=======================");
+		//td.getLocalTime();
+		//td.getLocalDate();
+		//td.diffDate(LocalDateTime.now(), LocalDateTime.of(2016, 02, 01, 0, 0));
+
+		//pauseScreen(1000);
+
+		//fizzBuzz();
+
+		//System.out.println(transformList());
 		
-		pauseScreen(1000);
+		int [] arr = {1,2,3,4,50};
 		
-		fizzBuzz();*/
+		System.out.println(reverse(arr));
 		
-		System.out.println(transformList());
+		printValues(reverse(arr));
 		
 	}
 	
+	public static void printValues(List<Integer> intList) {
+		System.out.println(intList.stream().map(String::valueOf).collect(Collectors.joining(" ")));
+	}
+	
+
+	public static List<Integer> reverse(int arr[]) {
+		List<Integer> intList = IntStream.rangeClosed(1, arr.length)
+				.mapToObj(i -> arr[arr.length - i])
+				.collect(Collectors.toList());
+		return intList;
+	}
+
 	public static List<User> transformList() {
 		final List<Employee> employeeList = new ArrayList();
 		final Department department = new Department("IT", "INTELLECT");
@@ -53,46 +71,44 @@ public class LambdaDemo {
 		Employee employee2 = new Employee("Manoj Kumar", "manoj@gmail.com", department);
 		Employee employee3 = new Employee("Pikachu chuchu", "pika@gmail.com", department);
 		Employee employee4 = new Employee("Maanwar mutant", "maanwar@gmail.com", department);
-		
+
 		employeeList.add(employee1);
 		employeeList.add(employee2);
 		employeeList.add(employee3);
 		employeeList.add(employee4);
-		
+
 		final List<User> usersList = new ArrayList();
-		if(!CollectionUtils.isEmpty(employeeList)) {
+		if (!CollectionUtils.isEmpty(employeeList)) {
 			employeeList.stream().filter(Objects::nonNull).forEach(emp -> {
 				final User user = new User(emp.getEmail(), emp.getName());
 				usersList.add(user);
 			});
 		}
-		
-		List<User> usrLs = Arrays.stream("id name".split(" "))
-				.map(transformList(User::new, User::setId,User::setName))
+
+		List<User> usrLs = Arrays.stream("id name".split(" ")).map(transformList(User::new, User::setId, User::setName))
 				.collect(Collectors.toList());
 		System.out.println(usrLs.get(0));
-		
+
 		return usersList;
 	}
-	
-	public static <T,V> Function<V,T> transformList(
-		    Supplier<? extends T> constructor, BiConsumer<? super T, ? super V>... setter) {
-		    return v -> {
-		        T t=constructor.get();
-		        for(BiConsumer<? super T, ? super V> s : setter) {
-		        	s.accept(t, v);
-		        }		        
-		        
-		        return t;
-		    };
+
+	public static <T, V> Function<V, T> transformList(Supplier<? extends T> constructor,
+			BiConsumer<? super T, ? super V>... setter) {
+		return v -> {
+			T t = constructor.get();
+			for (BiConsumer<? super T, ? super V> s : setter) {
+				s.accept(t, v);
+			}
+
+			return t;
+		};
 	}
-	
-	
-	public static void pauseScreen(int millisec){
+
+	public static void pauseScreen(int millisec) {
 		try {
 			Thread.sleep(millisec);
 		} catch (InterruptedException e) {
-			System.err.println("Error pausing console :"+e.getMessage());
+			System.err.println("Error pausing console :" + e.getMessage());
 		}
 		System.out.flush();
 	}
@@ -132,8 +148,8 @@ public class LambdaDemo {
 		names.forEach(n -> System.out.println(pred.test(n)));
 	}
 
-	public static void streamMethods(){
-		List<Integer> numbers = Arrays.asList(3,2,2,4,5,7,9,7);
+	public static void streamMethods() {
+		List<Integer> numbers = Arrays.asList(3, 2, 2, 4, 5, 7, 9, 7);
 		System.out.println(numbers.stream().sorted().distinct().collect(Collectors.toList()));
 	}
 
@@ -151,23 +167,24 @@ public class LambdaDemo {
 				.forEach(System.out::println);
 
 	}
-	
-	public static void fizzBuzz(){
-		
+
+	public static void fizzBuzz() {
+
 		System.out.println("\n=========Lets Play Fizz Buzz !!==========");
-		try(Scanner sc = new Scanner(System.in)){
+		try (Scanner sc = new Scanner(System.in)) {
 			System.out.println("Enter the number range seperated with '-' eg:10-100");
 			String[] range = sc.nextLine().split("-");
 			int start = Integer.parseInt(range[0]);
 			int end = Integer.parseInt(range[1]);
 			IntStream.range(start, end)
-			.mapToObj(i -> i % 5 == 0 ? (i % 7 == 0 ? "FizzBuzz" : "Fizz") : (i % 7 == 0 ? "Buzz" : i))
-			.forEach(System.out :: println);;
-			
-		}catch(Exception e){
-			System.err.printf("Error Occured : %s",e.getMessage());
+					.mapToObj(i -> i % 5 == 0 ? (i % 7 == 0 ? "FizzBuzz" : "Fizz") : (i % 7 == 0 ? "Buzz" : i))
+					.forEach(System.out::println);
+			;
+
+		} catch (Exception e) {
+			System.err.printf("Error Occured : %s", e.getMessage());
 		}
-		
+
 	}
 
 }

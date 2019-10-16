@@ -27,7 +27,6 @@ public class InfinitePingPong extends Thread {
 
     public static void main(String[] args) throws InterruptedException {
 
-
         InfinitePingPong a = new InfinitePingPong("ping");
         InfinitePingPong b = new InfinitePingPong("pong");
 

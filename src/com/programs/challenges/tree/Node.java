@@ -16,9 +16,9 @@ package com.programs.challenges.tree;
 
 public class Node {
 	
-	Node left, right;
+	public Node left, right;
 
-	int data;
+	public int data;
 	
 	Node(int data){
 		this.data = data;

@@ -163,8 +163,8 @@ public class LambdaDemo {
 		names.add("");
 		names.add("Neymar 2");
 
-		names.stream().filter(string -> !string.isEmpty()).filter(string -> string.matches("[a-zA-z]+"))
-				.forEach(System.out::println);
+		Predicate<String> p = val -> val.matches("[a-zA-z]+");
+		names.stream().filter(string -> !string.isEmpty()).filter(p).forEach(System.out::println);
 
 	}
 

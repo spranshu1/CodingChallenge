@@ -1,6 +1,7 @@
 package com.programs.challenges;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.stream.Stream;
 
 public class Tester {
@@ -10,12 +11,12 @@ public class Tester {
         //String B = "JJ653kK";
 
         //System.out.println(solution(A,B));
-        int[] A = {1};
-        System.out.println(solution(1, A));
+        int[] A = {1,2,3,3};
+        System.out.println(solution(4, A));
 
     }
 
-    public int solution(Tree T) {
+    public int solution2(Tree T) {
 
         HashMap<Integer, Integer> dataMap = new HashMap<>();
 

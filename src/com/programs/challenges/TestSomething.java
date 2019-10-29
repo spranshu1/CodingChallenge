@@ -13,6 +13,8 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.StringTokenizer;
+import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -26,20 +28,27 @@ public class TestSomething {
 		// System.out.println(solution(names,"Example"));
 		
 		
-		try(Scanner sc=new Scanner(System.in)){
-			String A=sc.next();
-			boolean isPalindrome = true;
-			int len = A.length();
-			if(A != null) {
-				for(int i =0 ; i < len;i++) {
-					if(A.charAt(i) != A.charAt(len - i - 1)) {
-						isPalindrome = false;
-					}
-				}
+		CodeBuilder cb = new CodeBuilder("Person")
+				.addField("name", "String")
+				.addField("age", "int");
+		System.out.println(cb);
+	}
+	
+	public static void checkRegexPattern() {
+		try(Scanner in = new Scanner(System.in)){
+			int testCases = Integer.parseInt(in.nextLine());
+			while(testCases>0){
+				String pattern = in.nextLine();
+	          	boolean isValid;
+	            try {
+	                Pattern  regex = Pattern.compile(pattern);
+	                isValid = true;
+	            }catch(PatternSyntaxException ex) {
+	                isValid = false;
+	            }
+	            System.out.println(isValid ? "Valid" : "Invalid");
 			}
-			System.out.println(isPalindrome ? "Yes" : "No");
 		}
-        
 		
 	}
 	

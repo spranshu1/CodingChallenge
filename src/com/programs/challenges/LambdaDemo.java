@@ -44,11 +44,7 @@ public class LambdaDemo {
 
 		//System.out.println(transformList());
 		
-		int [] arr = {1,2,3,4,50};
-		
-		System.out.println(reverse(arr));
-		
-		printValues(reverse(arr));
+		streamMethods();
 		
 	}
 	

@@ -26,13 +26,24 @@ public class TestSomething {
 		// John Elvis Doe; John Evan Doe; Jane Doe; Peter Brian Parker";
 
 		// System.out.println(solution(names,"Example"));
-		
-		
+				
 		CodeBuilder cb = new CodeBuilder("Person")
-				.addField("name", "String")
-				.addField("age", "int");
+						.addField("name", "String")
+						.addField("age", "int");
 		System.out.println(cb);
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	public static void checkRegexPattern() {
 		try(Scanner in = new Scanner(System.in)){

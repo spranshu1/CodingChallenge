@@ -19,7 +19,7 @@ import java.util.Map;
 public class Solution {
 
 	public static void main(String[] args) {
-		int[] cost = {2,2,4,3};
+		int[] cost = {2,3,4,2};
 
 		whatFlavors(cost, 4);
 	}

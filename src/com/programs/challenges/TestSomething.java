@@ -1,5 +1,6 @@
 package com.programs.challenges;
 
+import java.math.BigInteger;
 import java.text.DateFormatSymbols;
 import java.text.NumberFormat;
 import java.text.ParseException;
@@ -16,7 +17,8 @@ import java.util.StringTokenizer;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.SerializationUtils;
+
 
 public class TestSomething {
 
@@ -27,14 +29,20 @@ public class TestSomething {
 
 		// System.out.println(solution(names,"Example"));
 				
-		CodeBuilder cb = new CodeBuilder("Person")
-						.addField("name", "String")
-						.addField("age", "int");
-		System.out.println(cb);
+		extraLongFactorials(25);
+		
+		
+	
 	}
 	
 	
-	
+	static void extraLongFactorials(int n) {
+		BigInteger factorial = BigInteger.ONE;
+        for(int i = n; i > 0; i--){
+        	factorial = factorial.multiply(BigInteger.valueOf(i));
+        }
+        System.out.println(factorial);
+    }
 	
 	
 	
@@ -58,6 +66,7 @@ public class TestSomething {
 	                isValid = false;
 	            }
 	            System.out.println(isValid ? "Valid" : "Invalid");
+	            
 			}
 		}
 		

@@ -51,7 +51,7 @@ public class Solution {
 
 	public static void main(String[] args) {
 
-		int[] expenditure = {1,2,3,4,4};
+		int[] expenditure = {1,2,3,4,4,4,50};
 		System.out.println(activityNotifications(expenditure, 4));
 	}
 

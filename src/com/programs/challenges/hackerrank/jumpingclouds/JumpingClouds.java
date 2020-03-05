@@ -56,7 +56,7 @@ public class JumpingClouds {
     }
 
     public static void main(String[] args) {
-        int[] c = {0, 0, 1, 0, 0, 1, 0};
+        int[] c = {0, 0, 1, 0, 0, 1, 0, 1, 0};
         int result = jumpingOnClouds(c);
 
         System.out.println(result);

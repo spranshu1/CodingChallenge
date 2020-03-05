@@ -26,7 +26,7 @@ public class MinimumBribes {
 
 			}
 
-			
+			j++;
 			
 		}
 
@@ -44,7 +44,7 @@ public class MinimumBribes {
 	}
 
 	public static void main(String[] args) {
-		int[] arr = { 1, 2, 5, 3, 7, 8, 6, 4 };
+		int[] arr = { 1, 2, 5, 7, 8, 6, 4, 3 };
 		minimumBribes(arr);
 		for (int i : arr) {
 			System.out.print(i + ",");

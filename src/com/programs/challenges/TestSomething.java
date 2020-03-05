@@ -29,10 +29,14 @@ public class TestSomething {
 
 		// System.out.println(solution(names,"Example"));
 				
-		extraLongFactorials(25);
+		//extraLongFactorials(25);
 		
-		
+		print();
 	
+	}
+	
+	static void print() {
+		System.out.println('j'+'a'+'v'+'a');
 	}
 	
 	

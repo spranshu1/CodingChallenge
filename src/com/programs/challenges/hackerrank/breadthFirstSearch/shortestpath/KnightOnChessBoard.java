@@ -2,7 +2,7 @@
  * @author pranshu.shrivastava
  * @date Mar 13, 2020
  */
-package com.programs.challenges.hackerrank.shortestpath;
+package com.programs.challenges.hackerrank.breadthFirstSearch.shortestpath;
 
 import java.util.ArrayDeque;
 import java.util.HashSet;

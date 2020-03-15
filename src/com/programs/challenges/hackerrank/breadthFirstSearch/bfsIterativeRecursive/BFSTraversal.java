@@ -2,7 +2,7 @@
  * @author pranshu.shrivastava
  * @date Mar 13, 2020
  */
-package com.programs.challenges.hackerrank.bfsIterativeRecursive;
+package com.programs.challenges.hackerrank.breadthFirstSearch.bfsIterativeRecursive;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;

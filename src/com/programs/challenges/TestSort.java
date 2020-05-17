@@ -2,12 +2,19 @@ package com.programs.challenges;
 
 import java.util.Arrays;
 
-public class ArrayManupulation {
+public class TestSort {
 
 	public static void main(String[] args) {
-		int[] arr = {1, 2, 3, 4, 5, 6, 7};
-		rotateArray(arr,1);
-		System.out.println(Arrays.toString(arr));
+		//int[] arr = {1, 2, 3, 4, 5, 6, 7};
+		int[] arr = {1, 2, 5, 3,  8, 7, 6, 4};
+		int[] newArr = new int[arr.length];
+		
+		//copying one array to another
+		newArr=Arrays.copyOf(arr,arr.length);
+		Arrays.sort(newArr);	
+		//rotateArray(arr,1);
+		System.out.println(Arrays.toString(newArr));
+		countSwaps(arr);
 
 	}
 	
@@ -32,6 +39,15 @@ public class ArrayManupulation {
 			arr[end]=temp;
 			start++;
 			end--;
+		}
+	}
+	
+	public static void countSwaps(int[]arr) {
+		int[] newArr = new int[arr.length];
+		boolean iterate = true;
+		while(iterate)
+		{
+			
 		}
 	}
 	

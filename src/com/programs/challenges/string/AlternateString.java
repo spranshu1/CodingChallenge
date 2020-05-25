@@ -11,7 +11,7 @@
  * @author pranshu.shrivastava
  * @date Mar 2, 2020
  */
-package com.programs.challenges;
+package com.programs.challenges.string;
 
 public class AlternateString {
 	

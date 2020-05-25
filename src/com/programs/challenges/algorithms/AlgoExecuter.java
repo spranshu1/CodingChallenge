@@ -13,7 +13,7 @@ public class AlgoExecuter {
 		//getMaxCharSequence();
 		//isUniqueChar("PRANSHUU");
 		//pythagoreanTriplet();
-		rotateMatrix();
+		//rotateMatrix();
 		//findPairsInArray();
 	}
 	

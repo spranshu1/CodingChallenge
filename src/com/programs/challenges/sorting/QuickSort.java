@@ -1,4 +1,4 @@
-package com.programs.challenges;
+package com.programs.challenges.sorting;
 
 import java.util.Arrays;
 

@@ -16,7 +16,7 @@ package com.programs.challenges.hackerrank.heightoftree;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.programs.challenges.tree.Node;
+import com.programs.challenges.tree.TreeNode;
 
 public class Solution {
 
@@ -25,7 +25,7 @@ public class Solution {
 
 	}
 
-	public static int height(Node root) {
+	public static int height(TreeNode root) {
 		if (root == null) {
 			return 0;
 		}
@@ -34,17 +34,17 @@ public class Solution {
 
 	}
 
-	public static int height(Node node, Set<Integer> set) {
-		if (node == null)
+	public static int height(TreeNode treeNode, Set<Integer> set) {
+		if (treeNode == null)
 			return set.size();
 
 		int left = 0, right = 0, curr = 0;
 
-		if (set.contains(node.data)) {
+		if (set.contains(treeNode.data)) {
 			return set.size();
 		} else {
-			set.add(node.data);
-			return Math.max(height(node.left, new HashSet<Integer>(set)), height(node.right, new HashSet<Integer>(set)));
+			set.add(treeNode.data);
+			return Math.max(height(treeNode.left, new HashSet<Integer>(set)), height(treeNode.right, new HashSet<Integer>(set)));
 		}
 	}
 

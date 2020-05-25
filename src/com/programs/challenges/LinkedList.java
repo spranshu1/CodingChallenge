@@ -123,13 +123,13 @@ public class LinkedList {
 		// data carried by this node. could be of any type you need.
 		Object data;
 
-		// Node constructor
+		// TreeNode constructor
 		public Node(Object dataValue) {
 			next = null;
 			data = dataValue;
 		}
 
-		// another Node constructor if we want to specify the node to point to.
+		// another TreeNode constructor if we want to specify the node to point to.
 		@SuppressWarnings("unused")
 		public Node(Object dataValue, Node nextValue) {
 			next = nextValue;

@@ -31,7 +31,7 @@ public class ArrayRotate {
 	public static void main(String[] args) {
 		int [] arr = {1,2,3,4,5};
 		
-		for(int i : rotLeft(arr, 4)) {
+		for(int i : rotLeft(arr, 2)) {
 			System.out.print(i+",");
 		}
 		

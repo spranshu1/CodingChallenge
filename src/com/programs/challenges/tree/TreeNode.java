@@ -14,26 +14,26 @@
 package com.programs.challenges.tree;
 
 
-public class Node {
+public class TreeNode {
 	
-	public Node left, right;
+	public TreeNode left, right;
 
 	public int data;
 	
-	Node(int data){
+	TreeNode(int data){
 		this.data = data;
 	}
 
 	public void insert(int value) {
 		if(value <= data) {
 			if(left == null) {
-				left = new Node(value);
+				left = new TreeNode(value);
 			} else {
 				left.insert(value);
 			}
 		} else {
 			if(right == null) {
-				right = new Node(value);
+				right = new TreeNode(value);
 			} else {
 				right.insert(value);
 			}

@@ -11,7 +11,7 @@ public class LongestPalindromicSubstring {
 
     }
 
-    static String longestPalindrome(String str,int len) {
+    static String longestPalindrome(String str, int len) {
 
         // max_str stores the maximum length palindromic substring
         // found so far

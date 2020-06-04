@@ -2,7 +2,7 @@
  * @author pranshu.shrivastava
  * @date Dec 5, 2019
  */
-package com.programs.challenges;
+package com.programs.challenges.hackerrank.arraymanipulation;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,9 +19,9 @@ public class SubArraySum {
 		printAllSubarrays(arr, sum);
 	}
 
-	private static void insert(Map<Integer, List<Integer>> dataMap, int key, int value) {
-		if (!dataMap.containsKey(key)) {
-			dataMap.put(key, new ArrayList<>());
+	static void insert(Map<Integer,List<Integer>> dataMap, int key,int value){
+		if(!dataMap.containsKey(key)){
+			dataMap.put(key,new ArrayList<>());
 		}
 		dataMap.get(key).add(value);
 	}
@@ -52,8 +52,7 @@ public class SubArraySum {
 	}
 
 	private static void printSubArray(int[] arr, int begin, int end) {
-		System.out.println(IntStream.range(begin, end + 1).mapToObj(k -> arr[k]).collect(Collectors.toList()));
-
+		System.out.println(IntStream.range(begin,end+1).mapToObj(k -> arr[k]).collect(Collectors.toList()));
 	}
 
 }

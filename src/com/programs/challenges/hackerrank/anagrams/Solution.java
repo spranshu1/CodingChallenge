@@ -39,8 +39,8 @@ public class Solution {
     }
     
 	public static void main(String[] args) {
-		String a = "ebe";
-		String b = "abc";
+		String a = "listen";
+		String b = "silento";
 		System.out.println(makeAnagram(a, b));
 	}
 
